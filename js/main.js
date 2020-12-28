@@ -205,6 +205,18 @@
 //   description.style.transform = "translateZ(0px)";
 // });
 
+const loader = document.querySelector("#loading");
+function init() {
+  setTimeout(() => {
+    loader.style.display = "none";
+    loader.style.opacity = 0;
+
+    setTimeout(() => {}, 50);
+  }, 4000);
+}
+
+init();
+
 const dots = document.getElementById("dots");
 const moreText = document.getElementById("more");
 const btnText = document.getElementById("myBtn");
@@ -297,8 +309,6 @@ menuBtn.addEventListener("click", () => {
 
   const navShow = document.querySelector(".main-nav-v.show");
 });
-
-
 
 const boxes = document.querySelectorAll(".about-extra");
 window.addEventListener("scroll", checkBoxes);
