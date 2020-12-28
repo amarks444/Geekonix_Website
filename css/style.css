@@ -97,7 +97,7 @@ h6 {
 
 /* header */
 #header {
-  overflow-y: hidden;
+  overflow: hidden;
   height: 80px;
   transition: all 0.5s;
   z-index: 997;
@@ -255,11 +255,12 @@ h6 {
   padding: 210px 0 100px;
   overflow: hidden;
   position: relative;
-  background: #111310;
+  background: #1d1d1d;
+  box-shadow: inset 0px 0px 12px 0px rgba(255, 0, 0, 0.315);
   background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
   );
   background-repeat: no-repeat;
   background-position: center;
@@ -349,9 +350,10 @@ h6 {
 
 /* About */
 #about {
-  background-color: #111310;
+  background-color: #1d1d1d;
   color: white;
-  padding: 0 0;
+  padding-top: 60px;
+  padding-bottom: 90px;
   overflow: hidden;
 }
 
@@ -462,11 +464,11 @@ h6 {
   position: relative;
   opacity: 1;
   padding: 60px 0 40px 0;
-  box-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 0px 12px 0px rgba(255, 0, 0, 0.1);
 }
 
 #services {
-  background: #111310;
+  background: #1d1d1d;
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.5),
@@ -624,6 +626,7 @@ h6 {
   }
 
   .menu-btn {
+    margin-right: 30px;
     display: block;
   }
 
@@ -673,7 +676,7 @@ h6 {
     cursor: pointer;
   }
   #intro .intro-img {
-    display: none;
+    /* display: none; */
   }
 
   #services .section-header h3 {
@@ -693,6 +696,7 @@ h6 {
 
   #header .logo img {
     height: 60px;
+    margin-left: 30px;
   }
   #header .logo h1 a span,
   #header .logo h1 a span:hover {
@@ -711,7 +715,7 @@ h6 {
   }
 
   #intro .intro-img {
-    display: none;
+    /* display: none; */
   }
 
   #intro .intro-info .btn-get-started,
