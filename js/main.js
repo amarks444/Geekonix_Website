@@ -259,24 +259,30 @@ function readMore3() {
 }
 
 const menuBtn = document.querySelector(".menu-btn");
+const navUl = document.querySelector(".main-nav-v");
 let menuOpen = false;
 if (menuBtn) {
   menuBtn.addEventListener("click", () => {
     if (!menuOpen) {
       menuBtn.classList.add("open");
+      navUl.classList.remove("show");
       menuOpen = true;
     } else {
       menuBtn.classList.remove("open");
+      navUl.classList.add("show");
       menuOpen = false;
     }
   });
 }
 
-const navUl = document.querySelector(".main-nav-v");
-menuBtn.addEventListener("click", () => {
-  navUl.classList.toggle("show");
+const menuLink = document.querySelectorAll(".main-nav-v a");
 
-  const navShow = document.querySelector(".main-nav-v.show");
+menuLink.forEach((link) => {
+  if (link) {
+    link.addEventListener("click", () => {
+      navUl.classList.add("show");
+    });
+  }
 });
 
 const boxes = document.querySelectorAll(".about-extra");
