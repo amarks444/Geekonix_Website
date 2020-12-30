@@ -34,6 +34,17 @@ h6 {
   padding: 0;
 }
 
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+[type="text"].form-control:focus,
+[contenteditable].form-control:focus {
+  box-shadow: inset 0 -1px 0 rgb(255, 0, 0);
+}
+
 /* preloader */
 #loading {
   z-index: 1000;
@@ -690,7 +701,7 @@ h6 {
 }
 
 #glimps #portfolio-flters li:hover,
-#glimps #portfolio-flters li.filter-active {
+#glimps #portfolio-flters li.active {
   background: red;
   color: #fff;
 }
@@ -1064,7 +1075,7 @@ footer .copyright {
 /* footer end */
 
 /* responsivness */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1290px) {
   #intro .intro-img,
   #intro .intro-info {
     float: none;
@@ -1100,11 +1111,12 @@ footer .copyright {
 @media screen and (max-width: 1000px) {
   .main-nav-v,
   .main-nav-v * {
-    display: flex;
+    display: none;
     flex-direction: column;
     text-align: center;
-    top: 9%;
-    left: 50%;
+    justify-content: center;
+    top: 30%;
+    left: 30%;
     position: fixed;
     background-color: rgb(0, 0, 0);
     width: 50%;
@@ -1114,8 +1126,6 @@ footer .copyright {
     display: flex;
     align-items: center;
     justify-content: center;
-    left: 0;
-    margin: 0;
   }
 
   .main-nav-v > ul > li {
@@ -1123,8 +1133,9 @@ footer .copyright {
     margin-left: -180px;
   }
 
-  .main-nav-v.show {
-    display: none;
+  .main-nav-v.show,
+  .main-nav-v * {
+    display: flex;
   }
 
   .menu-btn {
@@ -1139,6 +1150,22 @@ footer .copyright {
   #services .box .icon {
     margin-top: 20px;
   }
+
+  #glimps #portfolio-flters {
+    display: block;
+  }
+
+  #glimps #portfolio-flters li {
+    font-size: 1rem;
+    padding: 0 3px 0 30px;
+    text-align: center;
+    display: flex;
+  }
+
+  #glimps #portfolio-flters li:last-child {
+    margin-right: 3%;
+  }
+
   footer {
     padding: 40px;
   }

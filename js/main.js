@@ -105,86 +105,42 @@
     });
   });
 
+
+  // flitering in glimps
+  // $(window).on("load", function () {
+  //   var portfolioIsotope = $(".portfolio-container").isotope({
+  //     itemSelector: ".portfolio-item",
+  //   });
+  //   $("#portfolio-flters li").on("click", function () {
+  //     $("#portfolio-flters li").removeClass("filter-active");
+  //     $(this).addClass("filter-active");
+
+  //     portfolioIsotope.isotope({ filter: $(this).data("filter") });
+  //   });
+  // });
+
+  $(document).ready(function(){
+    $('.list').click(function(){
+      const value = $(this).attr('data-filter');
+      if(value=='all'){
+        $('.portfolio-item').show('1000')
+      } else {
+        $('.portfolio-item').not('.'+value).hide('1000');
+        $('.portfolio-item').filter('.'+value).show('1000');
+      }
+    })
+    //add active class on selected
+    $('.list').click(function(){
+      $(this).addClass('active').siblings().removeClass('active')
+    })
+  })
+
   // jQuery counterUp (used in Whu Us section)
   $('[data-toggle="counter-up"]').counterUp({
     delay: 10,
     time: 1000,
   });
 })(jQuery);
-
-// const boxes = document.querySelectorAll('.about-extra');
-// window.addEventListener('scroll', checkBoxes)
-
-// checkBoxes()
-
-// function checkBoxes() {
-//     const triggerBottom = window.innerHeight / 5 * 4
-
-//     boxes.forEach(box => {
-//         const boxTop = box.getBoundingClientRect().top
-
-//         if(boxTop < triggerBottom) {
-//             box.classList.add('show')
-//         } else {
-//             box.classList.remove('show')
-//         }
-//     })
-// }
-
-// const panels = document.querySelectorAll('.member')
-
-// panels.forEach(panel => {
-//     panel.addEventListener('click', () => {
-
-//         removeActiveClasses()
-//         panel.classList.add('active')
-//     })
-// })
-
-// function removeActiveClasses() {
-//     panels.forEach(panel => {
-//         panel.classList.remove('active')
-//     })
-// }
-// const dots1 = document.getElementById("dots1");
-// const moreText1 = document.getElementById("more1");
-// const btnText1 = document.getElementById("myBtn1");
-
-// btnText1.addEventListener("click", readMore1);
-
-// function readMore1() {
-//   if (dots1.style.display === "none") {
-//     dots1.style.display = "inline";
-//     btnText1.innerHTML = "Read more";
-//     moreText1.style.display = "none";
-//   } else {
-//     dots1.style.display = "none";
-//     btnText1.innerHTML = "Read less";
-//     moreText1.style.display = "inline";
-//   }
-// }
-
-// const card = document.querySelectorAll("#services .box");
-// const container = document.querySelector("#services");
-// const title = document.querySelectorAll("#services .info .title");
-// const sneaker = document.querySelectorAll("#services .icon img");
-// const description = document.querySelectorAll("#services .info .description");
-
-// card.addEventListener("mouseenter", (e) => {
-//   card.style.marginTop = "50px";
-//   card.style.transition = "none";
-//   title.style.transform = "translateZ(30px)";
-//   sneaker.style.transform = "translateZ(20px) rotateZ(-45deg)";
-//   description.style.transform = "translateZ(25px)";
-// });
-// //
-// card.addEventListener("mouseleave", (e) => {
-//   card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-//   card.style.transition = "all 0.5s ease";
-//   title.style.transform = "translateZ(0px)";
-//   sneaker.style.transform = "translateZ(0px) rotateZ(0deg)";
-//   description.style.transform = "translateZ(0px)";
-// });
 
 const dots = document.getElementById("dots");
 const moreText = document.getElementById("more");
@@ -265,11 +221,11 @@ if (menuBtn) {
   menuBtn.addEventListener("click", () => {
     if (!menuOpen) {
       menuBtn.classList.add("open");
-      navUl.classList.remove("show");
+      navUl.classList.add("show");
       menuOpen = true;
     } else {
       menuBtn.classList.remove("open");
-      navUl.classList.add("show");
+      navUl.classList.remove("show");
       menuOpen = false;
     }
   });
@@ -280,7 +236,9 @@ const menuLink = document.querySelectorAll(".main-nav-v a");
 menuLink.forEach((link) => {
   if (link) {
     link.addEventListener("click", () => {
-      navUl.classList.add("show");
+      menuBtn.classList.remove("open");
+      navUl.classList.remove("show");
+      menuOpen = false;
     });
   }
 });
