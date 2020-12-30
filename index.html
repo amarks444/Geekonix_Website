@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class="contianer">
-      <header id="header" class="fixed-top">
+      <header id="header" class="fixed-top header1">
         <div class="container">
           <div class="logo float-left">
             <h1 class="text-light">
@@ -67,20 +67,54 @@
             </h1>
           </div>
 
-          <div class="menu-btn float-right">
+          <!-- <div class="menu-btn float-right">
             <div class="menu-btn__burger"></div>
-          </div>
+          </div> -->
 
-          <nav class="main-nav-v float-right">
-            <ul>
-              <li class="active"><a href="#intro" class="scrollto">Home</a></li>
-              <li><a href="#about" class="scrollto">About Us</a></li>
-              <li><a href="#services" class="scrollto">Clubs</a></li>
-              <li><a href="#glimps" class="scrollto">Glimpse</a></li>
-              <li><a href="#team" class="scrollto">Guests</a></li>
-              <li><a href="#contact" class="scrollto">Contact Us</a></li>
+          <!-- <nav class="main-nav-v float-right"> -->
+            <!--Navbar  For Laptop And Desktop -->
+          <nav id="nav2"  class="main-nav-v float-right  d-none d-lg-block">
+            <ul   class="navbar-menu2 -zoom2 ">
+              <!-- -zoom2 -->
+              <li class="active  item2 hover-zoomin"><a href="#intro" class=" link2">Home</a></li>
+              <!-- scrollto -->
+              <li class="item2"><a href="#about" class=" link2">About Us</a></li>
+              <li class="item2"><a href="#services" class=" link2">Clubs</a></li>
+              <li class="item2"><a href="#glimpse" class=" link2">Glimpse</a></li>
+              <li class="item2"><a href="#team" class=" link2">Guests</a></li>
+              <li class="item2"><a href="#contact" class=" link2">Contact Us</a></li>
             </ul>
           </nav>
+          <!--Navbar  For Mobile And Tablet -->
+              <nav class="nav1"   id="nav1"   role="navigation">
+                <ul class="nav__menu1" id="menu1" tabindex="-1" aria-label="main navigation" >
+                          <!-- hidden -->
+                  <li class="nav__item1"><a href="#intro" class="nav__link1 " onclick="myFunction()">Home</a></li>
+                  <li class="nav__item1"><a href="#about" class="nav__link1 " onclick="myFunction()">About Us</a></li>
+                  <li class="nav__item1"><a href="#services" class="nav__link1 " onclick="myFunction()">Clubs</a></li>
+                  <li class="nav__item1"><a href="#glimpse" class="nav__link1 " onclick="myFunction()">Glimpse</a></li>
+                  <li class="nav__item1"><a href="#team" class="nav__link1 " onclick="myFunction()">Guests</a></li>
+                  <li class="nav__item1"><a href="#contact" class="nav__link1 " onclick="myFunction()">Contact Us</a></li>
+                </ul>
+                
+                <!-- MENU TOGGLE BUTTON -->
+                <a href="#nav1" class="nav__toggle1" role="button" aria-expanded="false" aria-controls="menu" onclick="myFunction1()">
+                  <svg class="menuicon1" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                    <title>Toggle Menu</title>
+                    <g>
+                      <line class="menuicon__bar1" x1="13" y1="16.5" x2="37" y2="16.5"/>
+                      <line class="menuicon__bar1" x1="13" y1="24.5" x2="37" y2="24.5"/>
+                      <line class="menuicon__bar1 red" x1="13" y1="24.5" x2="37" y2="24.5"/>
+                      <line class="menuicon__bar1" x1="13" y1="32.5" x2="37" y2="32.5"/>
+                      <circle class="menuicon__circle1 white" r="23" cx="25" cy="25" />
+                    </g>
+                  </svg>
+                </a>
+                
+                <!-- ANIMATED BACKGROUND ELEMENT -->
+                <div class="splash1"></div>
+                
+              </nav>          <!-- .main-nav -->
         </div>
       </header>
 
@@ -692,7 +726,7 @@
         <!--What we do end  -->
 
         <!-- Glimps -->
-        <section id="glimps" class="clearfix">
+        <section id="glimpse" class="clearfix">
           <div class="container">
     
             <header class="section-header">
@@ -1182,5 +1216,28 @@
 
     <!-- Template Main Javascript File -->
     <script src="js/main.js"></script>
+    <!-- Note1_Start -->
+  <script src="js/mobileNavigation.js"></script>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("menu1");
+      if (x.style.display === "none") {
+        x.style.display = "inline-block";
+      } else {
+        x.style.display = "none";
+      }
+      document.querySelector('#nav1').classList.toggle('nav--open1');
+    }
+    function myFunction1() {
+      var x = document.getElementById("menu1");
+      if (x.style.display === "none") {
+        x.style.display = "inline-block";
+      }
+      //  else {
+      //   x.style.display = "none";
+      // }
+    }
+  </script>
+ <!-- Note1 -->
   </body>
 </html>
